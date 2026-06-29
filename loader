@@ -21,9 +21,10 @@ local function checkandrun()
     end
 end
 
-checkandrun()
 
-task.spawn(function() 
+task.delay(0.25, function()
+
+    checkandrun()
 
     while task.wait(20) do
         checkandrun()
