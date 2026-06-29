@@ -11,6 +11,8 @@ local function checkandrun()
     end
 end
 
+checkandrun()
+
 task.spawn(function() 
 
     while task.wait(20) do
