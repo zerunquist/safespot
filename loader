@@ -1,7 +1,11 @@
-local ui = gethui()
-if ui == nil then ui = game:GetService("CoreGui") end
+if game:IsLoaded() ~= true then
+    game.Loaded:Wait()
+end
+
 
 local function checkandrun()
+    local ui = gethui()
+    if ui == nil then ui = game:GetService("CoreGui") end
     if ui then
         for _, desc in pairs(ui:GetDescendants()) do
             if not string.find(string.lower(desc.Name), "cascade") then
@@ -10,8 +14,6 @@ local function checkandrun()
         end
     end
 end
-
-checkandrun()
 
 task.spawn(function() 
 
