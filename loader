@@ -2,9 +2,6 @@ if game:IsLoaded() ~= true then
     game.Loaded:Wait()
 end
 
-local ui = gethui()
-if ui == nil then ui = game:GetService("CoreGui") end
-
 local function checkandrun()
     local ui = gethui()
     if ui == nil then ui = game:GetService("CoreGui") end
